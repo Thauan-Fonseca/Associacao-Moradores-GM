@@ -1,0 +1,30 @@
+.home h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.clientes-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 0 2rem;
+}
+
+.clientes-container p {
+    text-align: center;
+}
+
+.clientes-container .cliente {
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.btn-secondary{
+    width: 6rem;
+}
+
+
+

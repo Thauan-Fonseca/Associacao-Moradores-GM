@@ -1,0 +1,29 @@
+POST http://localhost:3000/api/clientes
+Content-type: application/json
+
+{
+    "numero": 1,
+    "nome": "Segunda casa",
+    "leitAnt": 1000,
+    "leitAtual": 1200
+}
+
+###
+GET http://localhost:3000/api/clientes
+
+###
+GET http://localhost:3000/api/clientes/647fe37eb7c06a455c4dbed3
+
+###
+DELETE http://localhost:3000/api/clientes/647fe13a11a5c802104440ee
+
+###
+PUT http://localhost:3000/api/clientes/647fe37eb7c06a455c4dbed4
+Content-type: application/json
+
+{
+    "numero": 1,
+    "nome": "TESTADO EDIÇÃO",
+    "leitAnt": 1000,
+    "leitAtual": 1200
+}
