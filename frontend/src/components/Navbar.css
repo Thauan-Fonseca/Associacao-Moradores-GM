@@ -1,9 +1,14 @@
-#navbar{
+#navegacao{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
     margin-bottom: 1rem;
+    background-image: url('../../assets//imgCabecalho/gm4.png');
+    background-repeat: no-repeat;
+    height: 100%;
+    max-height: 352px;
+
 }
 
 #navbar h2 {

@@ -1,10 +1,12 @@
 import { NavLink } from 'react-router-dom';
-import './Navbar.css'
+import './Navbar.css';
+
 
 const NavBar = () => {
     return(
-        <nav>
-            <h2>Associação do moradores da comunidade de garrota morta</h2>
+        <nav id='navegacao'>
+            <h2>Associação de morados do sítio Garrota Morta</h2>
+            
             <ul>
                 <li>
                     <NavLink to="/">

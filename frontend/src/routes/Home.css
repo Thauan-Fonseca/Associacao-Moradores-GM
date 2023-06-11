@@ -10,6 +10,15 @@
     padding: 0 2rem;
 }
 
+.cliente{
+    background-color: #fff;
+    border: 1px solid #cfcfcf;
+    border-radius: 12px;
+    padding: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
 .clientes-container p {
     text-align: center;
 }

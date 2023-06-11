@@ -5,12 +5,34 @@
     margin: 1rem;
 }
 
-.actions-container {
+table{
+    margin: 24px auto;
+}
+
+thead{
+    margin-bottom: 24px;
+}
+
+.tabela{
+    margin-bottom: 24px;
+}
+
+tr, td{
+    border: 1px solid #000000;
+    padding: 5px;
+}
+
+.container-botoes {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
+}
+
+.btn2{
+    width: 96px;
+    margin: 0 auto 8px;
+    background-color: #7703fc;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px
 }
 
 .btn-secondary {
