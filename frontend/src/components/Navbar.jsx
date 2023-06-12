@@ -1,11 +1,11 @@
 import { NavLink } from 'react-router-dom';
 import './Navbar.css';
-
+import brasao from '../../assets/imgCabecalho/brasao.png'
 
 const NavBar = () => {
     return(
         <nav id='navegacao'>
-            <h2>Associação de morados do sítio Garrota Morta</h2>
+            <img src={brasao} alt="" />
             
             <ul>
                 <li>

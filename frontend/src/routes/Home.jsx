@@ -4,10 +4,13 @@ import { useState, useEffect } from 'react';
 
 import { Link } from "react-router-dom";
 
+import Secao from '../components/Secao';
+
 import './Home.css'
 
 
 const Home = () => {
+    
     const [clientes, setClientes]= useState(null);
 
     // Carregar clientes
@@ -23,9 +26,11 @@ const Home = () => {
     }, [])
 
     if(!clientes) return <p>Carregando...</p>;
-
+    
     return (
+        
         <div className='home'>
+            <Secao />
             <h1>Clientes</h1>
         
             <div className='clientes-container'>

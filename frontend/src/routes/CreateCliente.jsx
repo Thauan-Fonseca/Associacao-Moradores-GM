@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import clienteFetch from '../axios/config';
 import useToast from '../hook/useToast';
 import './Form.css';
+import './CreateCliente.css'
 
 
 const CreateCliente = () => {
@@ -64,7 +65,7 @@ const CreateCliente = () => {
                     value={leitAtual}
                     />
 
-                    <input type="submit" value="Criar cliente"/>
+                    <input type="submit" value="Criar cliente" className='btn'/>
                 </label>
             </form>
         </div>

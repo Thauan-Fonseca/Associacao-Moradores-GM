@@ -1,0 +1,13 @@
+.secao{
+    background-image: url('../../assets/imgCabecalho/gm.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 328px;
+    max-height: 328px;
+    margin-bottom: 2rem;
+}
+
+.texto-sec{
+    padding-left: 40%;
+    padding-top: 5%;
+}

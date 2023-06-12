@@ -3,12 +3,9 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    margin-bottom: 1rem;
-    background-image: url('../../assets//imgCabecalho/gm4.png');
-    background-repeat: no-repeat;
+    background-color: #FFF;
     height: 100%;
     max-height: 352px;
-
 }
 
 #navbar h2 {
@@ -16,6 +13,6 @@
     font-weight: 900;
 }
 
-#navbar ul{
+#navegacao ul{
  align-items: center;
 }

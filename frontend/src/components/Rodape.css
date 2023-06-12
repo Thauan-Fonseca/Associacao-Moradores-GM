@@ -1,0 +1,23 @@
+.rodape{
+    background-color: #FFF;
+    padding-bottom: 2rem;
+}
+
+.info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 32px 16px 32px;
+}
+
+.info ul {
+    align-items: center;
+}
+
+.texto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding: 0 0 0 0;
+}

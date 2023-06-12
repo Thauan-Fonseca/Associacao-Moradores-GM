@@ -8,6 +8,8 @@ import './Cliente.css';
 
 import useToast from "../hook/useToast";
 
+import {ReactToPrint} from 'react-to-print';
+
 const Cliente = () => {
     const { id } = useParams();
 
@@ -106,7 +108,7 @@ const Cliente = () => {
     }
 
     return(
-    <div className="cliente">
+    <div className="cliente" id="documento">
 
         <h1>Associação do desenvolvimento comum rural do sítio Garrota Morta - ADECORGAM</h1>
         <h3>Dados Do Cliente</h3>
@@ -115,7 +117,7 @@ const Cliente = () => {
         <table>
            <thead>
                 <tr className="tabela">
-                    <td>Taxa mínima</td>
+                    <td>Taxa máxima</td>
                     <td>Preço/taxa</td>
                     <td>Valor m<sup>3</sup> em excesso</td>
                     <td>Valor mínimo</td>
@@ -165,7 +167,7 @@ const Cliente = () => {
 
         <div className="container-botoes">
             <Link to={`/cliente/edit/${cliente._id}`}className="btn2">Editar</Link>
-            <a className="btn2">Imprimir</a>
+            <Link className="btn2">Imprimir</Link>
             <button onClick={handleDelete} className="btn-secondary">Excluir</button>
         </div>
     </div>

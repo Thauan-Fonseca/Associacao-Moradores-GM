@@ -9,6 +9,7 @@ import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 import Home from './routes/Home.jsx';
 import CreateCliente from './routes/CreateCliente.jsx'
 import EditCliente from './routes/EditCliente.jsx';
+import Sobre from './routes/Sobre.jsx'
 const router = createBrowserRouter([
   {
     path: '/',
@@ -23,13 +24,18 @@ const router = createBrowserRouter([
         element: <CreateCliente />
       },
       {
+        path: '/sobre',
+        element: <Sobre />
+      },
+      {
         path: '/cliente/:id',
         element: <Cliente />
       },
       {
         path: '/cliente/edit/:id',
         element: <EditCliente />
-      }
+      },
+     
     ]
   }
 ])

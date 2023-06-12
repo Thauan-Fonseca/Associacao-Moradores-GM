@@ -1,3 +1,8 @@
+#documento{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
 .cliente h1,
 .cliente h3,
 .cliente {
@@ -13,9 +18,7 @@ thead{
     margin-bottom: 24px;
 }
 
-.tabela{
-    margin-bottom: 24px;
-}
+
 
 tr, td{
     border: 1px solid #000000;
