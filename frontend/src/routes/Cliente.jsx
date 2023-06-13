@@ -8,7 +8,7 @@ import './Cliente.css';
 
 import useToast from "../hook/useToast";
 
-import { pdf, Document, Page, Text } from '@react-pdf/renderer';
+import { pdf, Document, Page, Text, View } from '@react-pdf/renderer';
 
 
 
@@ -115,18 +115,27 @@ const Cliente = () => {
     <Document>
       <Page>
         <Text style={{ textAlign: "center", marginTop: "20px",fontSize: "24px" }}>Associação do desenvolvimento comum rural do sítio Garrota Morta  </Text>
-        <Text  style={{textAlign: "center", marginBottom: "20px", marginTop: "20px"}}>
+        <Text  style={{textAlign: "center", marginBottom: "50px", marginTop: "20px"}}>
             ADECORGAM - CNPJ: 05.983.194/0001-06
             Sítio Garrota Morta - Zona Rural
             Antônio Martins - CEP: 59870-000
         </Text>
-        
-        
-        <Text>Cliente: {cliente.nome}</Text>
-        <Text>Consumo: {consumo()} (m3)</Text>
-        <Text>Excesso: {excesso()} (m3)</Text>
-        <Text>Total a pagar: R${totalAPagar()},00</Text>
-        
+        <View style={{display: "flex", justifyContent: "space-around"}}>
+
+            <Text style={{textAlign: "center"}}>Cliente: {cliente.nome}</Text>
+            <Text style={{textAlign: "center",marginBottom: "20px"}}>Núnmero da casa: {cliente.numero}</Text>
+
+            <Text style={{borderBottom: "1px solid #000000", paddingLeft: "40px", marginTop: "100px"}}>Taxa Máxima(m3)    Preço/Taxa    Valor em excesso    Subtotal</Text>
+            <Text style={{ paddingLeft: "75px", marginTop: "8px"}}>    15(m3)                 R$25,00              R$5,00            R$25,00</Text>
+            
+            <Text style={{borderBottom: "1px solid #000000", paddingLeft: "48px", marginTop: "16px"}}>Leitura Anterior        Leitura Atual       Consumo          Excesso</Text>
+            
+            <Text style={{paddingLeft: "70px", marginTop: "8px"}}>{cliente.leitAnt}(m3)                  {cliente.leitAtual}(m3)             {consumo()}(m3)            {excesso()}(m3)</Text>
+
+            <Text style={{borderBottom: "1px solid #000000", paddingLeft: "48px", marginTop: "16px"}}>Data da leitura      Próxima Leitura   Data Vencimento     Total</Text>
+            <Text style={{paddingLeft: "62px", marginTop: "8px"}}>{dataAtual()}                {proximaData()}          {dataVencimento()}          R${totalAPagar()},00</Text>
+        </View>
+
       </Page>
     </Document>
   );
