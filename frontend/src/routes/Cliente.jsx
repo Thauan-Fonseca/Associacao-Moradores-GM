@@ -8,7 +8,10 @@ import './Cliente.css';
 
 import useToast from "../hook/useToast";
 
-import {ReactToPrint} from 'react-to-print';
+import { pdf, Document, Page, Text } from '@react-pdf/renderer';
+
+
+
 
 const Cliente = () => {
     const { id } = useParams();
@@ -107,6 +110,38 @@ const Cliente = () => {
         return `20/${novaData.getMonth() + 1}/${novaData.getFullYear()}`
     }
 
+    const handlePrint = async () => {
+  const doc = (
+    <Document>
+      <Page>
+        <Text style={{ textAlign: "center", marginTop: "20px",fontSize: "24px" }}>Associação do desenvolvimento comum rural do sítio Garrota Morta  </Text>
+        <Text  style={{textAlign: "center", marginBottom: "20px", marginTop: "20px"}}>
+            ADECORGAM - CNPJ: 05.983.194/0001-06
+            Sítio Garrota Morta - Zona Rural
+            Antônio Martins - CEP: 59870-000
+        </Text>
+        
+        
+        <Text>Cliente: {cliente.nome}</Text>
+        <Text>Consumo: {consumo()} (m3)</Text>
+        <Text>Excesso: {excesso()} (m3)</Text>
+        <Text>Total a pagar: R${totalAPagar()},00</Text>
+        
+      </Page>
+    </Document>
+  );
+
+  const asPdf = pdf();
+  asPdf.updateContainer(doc);
+  const blob = await asPdf.toBlob();
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = 'cliente.pdf';
+  link.click();
+};
+
+
     return(
     <div className="cliente" id="documento">
 
@@ -167,7 +202,7 @@ const Cliente = () => {
 
         <div className="container-botoes">
             <Link to={`/cliente/edit/${cliente._id}`}className="btn2">Editar</Link>
-            <Link className="btn2">Imprimir</Link>
+            <button className="btn2" onClick={handlePrint}>Imprimir</button>
             <button onClick={handleDelete} className="btn-secondary">Excluir</button>
         </div>
     </div>
