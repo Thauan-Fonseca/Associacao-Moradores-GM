@@ -8,11 +8,27 @@
     max-height: 352px;
 }
 
+.btn{
+    background-color: #280155;
+}
+
 #navbar h2 {
-    color: #7703FC;
+    color: #280155;
     font-weight: 900;
 }
 
 #navegacao ul{
  align-items: center;
+}
+
+@media (max-width: 426px){
+
+    #navegacao{
+        display: flex;
+        justify-content: space-around;
+    }
+    
+   .btn{
+    width: 125px;
+   }
 }

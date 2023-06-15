@@ -8,7 +8,10 @@ import './Cliente.css';
 
 import useToast from "../hook/useToast";
 
-import {ReactToPrint} from 'react-to-print';
+import { pdf, Document, Page, Text, View } from '@react-pdf/renderer';
+
+
+
 
 const Cliente = () => {
     const { id } = useParams();
@@ -107,6 +110,49 @@ const Cliente = () => {
         return `20/${novaData.getMonth() + 1}/${novaData.getFullYear()}`
     }
 
+    const handlePrint = async () => {
+  const doc = (
+    <Document>
+      <Page>
+        <Text style={{ textAlign: "center", marginTop: "20px",fontSize: "24px" }}>Associação do desenvolvimento comum rural do sítio Garrota Morta  </Text>
+        <Text  style={{textAlign: "center", marginBottom: "75px", marginTop: "20px"}}>
+            ADECORGAM - CNPJ: 05.983.194/0001-06
+            Sítio Garrota Morta - Zona Rural
+            Antônio Martins - CEP: 59870-000
+        </Text>
+        <View style={{display: "flex", justifyContent: "space-around"}}>
+
+            <Text style={{textAlign: "center"}}>Cliente: {cliente.nome}</Text>
+            <Text style={{textAlign: "center",marginBottom: "20px"}}>Núnmero da casa: {cliente.numero}</Text>
+
+            <Text style={{borderBottom: "1px solid #000000", paddingLeft: "40px", marginTop: "100px"}}>Taxa Máxima(m3)    Preço/Taxa    Valor em excesso    Subtotal</Text>
+            <Text style={{ paddingLeft: "75px", marginTop: "8px"}}>    15(m3)                 R$25,00              R$5,00            R$25,00</Text>
+            
+            <Text style={{borderBottom: "1px solid #000000", paddingLeft: "48px", marginTop: "16px"}}>Leitura Anterior        Leitura Atual       Consumo          Excesso</Text>
+            
+            <Text style={{paddingLeft: "70px", marginTop: "8px"}}>{cliente.leitAnt}(m3)                  {cliente.leitAtual}(m3)             {consumo()}(m3)            {excesso()}(m3)</Text>
+
+            <Text style={{borderBottom: "1px solid #000000", paddingLeft: "48px", marginTop: "16px"}}>Data da leitura      Próxima Leitura   Data Vencimento     Total</Text>
+            <Text style={{paddingLeft: "62px", marginTop: "8px"}}>{dataAtual()}                {proximaData()}          {dataVencimento()}          R${totalAPagar()},00</Text>
+        </View>
+
+      </Page>
+    </Document>
+    
+  );
+
+  const asPdf = pdf();
+  asPdf.updateContainer(doc);
+  const blob = await asPdf.toBlob();
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = 'cliente.pdf';
+  link.click();
+  useToast('PDF impresso com sucesso')
+};
+
+
     return(
     <div className="cliente" id="documento">
 
@@ -116,8 +162,8 @@ const Cliente = () => {
         <h3>Cliente: {cliente.nome}</h3>
         <table>
            <thead>
-                <tr className="tabela">
-                    <td>Taxa máxima</td>
+                <tr  className="tabela">
+                    <td >Taxa máxima</td>
                     <td>Preço/taxa</td>
                     <td>Valor m<sup>3</sup> em excesso</td>
                     <td>Valor mínimo</td>
@@ -167,8 +213,8 @@ const Cliente = () => {
 
         <div className="container-botoes">
             <Link to={`/cliente/edit/${cliente._id}`}className="btn2">Editar</Link>
-            <Link className="btn2">Imprimir</Link>
-            <button onClick={handleDelete} className="btn-secondary">Excluir</button>
+            <Link className="btn1" onClick={handlePrint}>Imprimir</Link>
+            <Link onClick={handleDelete} className="btn3">Excluir</Link>
         </div>
     </div>
     )

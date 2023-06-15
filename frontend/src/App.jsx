@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom'
-import Secao from './components/Secao'
+
 // Components
 import NavBar from './components/NavBar'
 import Rodape from './components/Rodape'

@@ -1,6 +1,7 @@
 #documento{
     margin-top: 2rem;
     margin-bottom: 2rem;
+    
 }
 
 .cliente h1,
@@ -11,14 +12,9 @@
 }
 
 table{
-    margin: 24px auto;
+    max-width: 90%;
+    margin: 0 auto;
 }
-
-thead{
-    margin-bottom: 24px;
-}
-
-
 
 tr, td{
     border: 1px solid #000000;
@@ -27,6 +23,18 @@ tr, td{
 
 .container-botoes {
     display: flex;
+    margin-top: 8px;
+}
+
+.btn1{
+    width: 96px;
+    margin: 0 auto 8px;
+    background-color: #7703fc;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-family: "Lato";
+    text-decoration: none;
 }
 
 .btn2{
@@ -35,9 +43,32 @@ tr, td{
     background-color: #7703fc;
     color: #fff;
     padding: 0.5rem 1rem;
-    border-radius: 5px
+    border-radius: 5px;
+    font-family: "Lato";
+    text-decoration: none;
 }
 
-.btn-secondary {
+.btn3 {
     margin: 0 auto;
+   border: 1px solid #cfcfcf;
+   border-radius: 5px;
+   width: 100px;
+   height: 35px;
+   padding-top: 6px;
+}
+
+@media (max-width: 426px){
+    table{
+        max-width: 100%;
+        
+        width: 150px;
+    }
+}
+
+@media (max-width: 376px){
+    table{
+        max-width: 100%;
+        margin-left: -20px;
+        width: 150px;
+    }
 }
