@@ -3,6 +3,7 @@
     padding-bottom: 2rem;
 }
 
+
 .info{
     display: flex;
     justify-content: space-between;
@@ -20,4 +21,21 @@
     align-items: center;
     justify-content: start;
     padding: 0 0 0 0;
+}
+
+@media (max-width: 768px){
+    h3{
+        font-size: 1rem;
+        text-align: center;
+    }
+    
+}
+
+@media (max-width: 426px){
+
+    
+    
+   .btn{
+    text-align: center;
+   }
 }

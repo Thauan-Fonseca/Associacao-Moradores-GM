@@ -1,0 +1,35 @@
+.sobre{
+    background-color: #fff;
+    border: 1px solid #cfcfcf;
+    border-radius: 12px;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+
+.paragrafo{
+    text-align: center;
+    margin-bottom: 3%;
+}
+
+h2{
+    text-align: center;
+    margin-bottom: 1%;
+}
+
+p{
+    margin-bottom: 2%;
+    color: #000;
+}
+
+.valores{
+    display: flex;
+    flex-direction: column;
+    list-style-type: disc;
+}
+
+.listaSobre{
+    margin-bottom: 2%;
+}

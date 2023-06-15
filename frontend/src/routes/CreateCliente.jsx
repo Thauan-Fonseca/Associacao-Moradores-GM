@@ -45,7 +45,7 @@ const CreateCliente = () => {
             <p>Insira os dados</p>
             <form action="" onSubmit={(e) => createNewCliente(e)}>
                 <label >
-                    <span>Número da casa: </span>
+                    <span>Endereço (N°) </span>
                     <input type="number" placeholder='N° da casa' required onChange={(e) => setNumero(e.target.value)}
                     value={numero}
                     />

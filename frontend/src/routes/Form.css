@@ -63,3 +63,9 @@
     border: 1px solid #cfcfcf;
 
 }
+
+@media (max-width: 426px){
+    .btn{
+        text-align: center;
+    }
+}

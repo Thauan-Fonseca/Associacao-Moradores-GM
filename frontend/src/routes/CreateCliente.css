@@ -2,3 +2,9 @@
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
+
+@media (max-width: 426px){
+    .btn{
+        align-items: center;
+    }
+}

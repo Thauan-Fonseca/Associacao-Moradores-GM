@@ -37,7 +37,7 @@ const Home = () => {
                 {clientes.length === 0 && <p> Não há clientes cadastrados! </p>}
                 {clientes.map((cliente) => (
                     <div className='cliente' key={cliente._id}>
-                        <h3>Número da matrícula: {cliente.numero}</h3>
+                        <h3>Endereço (N°): {cliente.numero}</h3>
                         <h3>Nome do cliente: {cliente.nome}</h3>
                         <h3>Leitura anterior: {cliente.leitAnt} m<sup>3</sup></h3>
                         <h3>Leitura atual: {cliente.leitAtual} m<sup>3</sup></h3>

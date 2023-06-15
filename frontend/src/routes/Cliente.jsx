@@ -115,7 +115,7 @@ const Cliente = () => {
     <Document>
       <Page>
         <Text style={{ textAlign: "center", marginTop: "20px",fontSize: "24px" }}>Associação do desenvolvimento comum rural do sítio Garrota Morta  </Text>
-        <Text  style={{textAlign: "center", marginBottom: "50px", marginTop: "20px"}}>
+        <Text  style={{textAlign: "center", marginBottom: "75px", marginTop: "20px"}}>
             ADECORGAM - CNPJ: 05.983.194/0001-06
             Sítio Garrota Morta - Zona Rural
             Antônio Martins - CEP: 59870-000
@@ -138,6 +138,7 @@ const Cliente = () => {
 
       </Page>
     </Document>
+    
   );
 
   const asPdf = pdf();
@@ -148,6 +149,7 @@ const Cliente = () => {
   link.href = url;
   link.download = 'cliente.pdf';
   link.click();
+  useToast('PDF impresso com sucesso')
 };
 
 
@@ -160,8 +162,8 @@ const Cliente = () => {
         <h3>Cliente: {cliente.nome}</h3>
         <table>
            <thead>
-                <tr className="tabela">
-                    <td>Taxa máxima</td>
+                <tr  className="tabela">
+                    <td >Taxa máxima</td>
                     <td>Preço/taxa</td>
                     <td>Valor m<sup>3</sup> em excesso</td>
                     <td>Valor mínimo</td>
@@ -211,8 +213,8 @@ const Cliente = () => {
 
         <div className="container-botoes">
             <Link to={`/cliente/edit/${cliente._id}`}className="btn2">Editar</Link>
-            <button className="btn2" onClick={handlePrint}>Imprimir</button>
-            <button onClick={handleDelete} className="btn-secondary">Excluir</button>
+            <Link className="btn1" onClick={handlePrint}>Imprimir</Link>
+            <Link onClick={handleDelete} className="btn3">Excluir</Link>
         </div>
     </div>
     )
