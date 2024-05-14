@@ -19,6 +19,3 @@ app.listen(3000, function() {
     console.log("O Servidor está online!")
 });
 
-
-// Thauan
-// vg0o0CqI2Xeml2Ye
